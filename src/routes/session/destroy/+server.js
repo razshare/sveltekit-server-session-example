@@ -4,13 +4,13 @@
  */
 function delay(milliseconds) {
   return new Promise(function start(resolve) {
-    setTimeout(resolve, milliseconds)
-  })
+    setTimeout(resolve, milliseconds);
+  });
 }
 
 export async function GET({ locals }) {
-  const { destroy } = locals.session
-  await destroy()
-  await delay(3000)
-  return new Response('Session destroyed.')
+  const { destroy } = locals.session;
+  await destroy();
+  await delay(3000);
+  return new Response('Session destroyed.');
 }
