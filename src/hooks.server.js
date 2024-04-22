@@ -4,7 +4,7 @@ import { session } from 'sveltekit-server-session';
  * @type {import("@sveltejs/kit").Handle}
  */
 export async function handle({ event, resolve }) {
-  const { error, value: sessionLocal } = await session.start({
+  const [sessionLocal, error] = await session.start({
     cookies: event.cookies
   });
 
